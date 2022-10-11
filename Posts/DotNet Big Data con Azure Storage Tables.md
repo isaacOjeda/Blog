@@ -1,7 +1,7 @@
 ---
 title: .NET - Guardando datos con Azure Storage Tables
 published: true
-publishDate: 10 Oct 2022
+publishDate: 10/10/2022
 description: En este artículo veremos qué es y cómo usar la API de Tables Storage de Azure.
 tags: ["dotnet","azure","aspnetcore", "csharp"]
 ---
@@ -85,11 +85,15 @@ Una vez con Azurite instalado, crearemos un proyecto web vacío en una carpeta p
 dotnet new web
 ```
 
-E instalamos el cliente de Tables Storage:
+E instalamos los siguientes paquetes:
 
 ```bash
 dotnet add package Azure.Data.Tables
+dotnet add package System.Linq.Async
 ```
+
+> Nota 💡: Usaremos **System.Linq.Async** para procesar Streams asincronos con Linq.
+
 
 ### Models > VaccineRequest
 
@@ -130,7 +134,7 @@ public interface IVaccineRequestStoreService
 {
     Task CreateRequestAsync(VaccineRequest entity);
     Task<VaccineRequest> GetRequestAsync(string curp, string state, string city);
-    Task<List<VaccineRequest>> GetRequestsByCityAsync(string state, string city);
+    IAsyncEnumerable<VaccineRequest> GetRequestsByCityAsync(string state, string city);
 }
 ```
 
@@ -183,20 +187,10 @@ public class VaccineRequestStoreService : IVaccineRequestStoreService
         return null;
     }
 
-    public async Task<List<VaccineRequest>> GetRequestsByCityAsync(string state, string city)
-    {
-        var results = _tableClient
+
+    public IAsyncEnumerable<VaccineRequest> GetRequestsByCityAsync(string state, string city) =>
+         _tableClient
             .QueryAsync<VaccineRequest>(q => q.PartitionKey == $"{state}_{city}");
-
-        var requests = new List<VaccineRequest>();
-
-        await foreach (var page in results.AsPages())
-        {
-            requests.AddRange(page.Values);
-        }
-
-        return requests;
-    }
 
 }
 ```
@@ -211,12 +205,11 @@ Resumen de cada método:
   - En este caso, solo queremos el primer resultado (porque, será un resultado por que usamos el **Row Key**)
   - El Partition Key está compuesto por el estado y la ciudad (`$"{state}_{city}"`)
 - **GetRequestsByCityAsync**:
-  - De igual forma con `QueryAsync` realizamos la consulta, pero aquí sí iteramos todos los resultados
-  - Usamos `AsPages()` para que nos regrese una colección de páginas con los resultados (así no iteramos 1 por 1)
-    - Por cada página consultada, se hace una solicitud HTTP al servicio para consultar los siguientes registros
-  - Agregamos una colección plana con todos los resultados encontrados
-    - **Nota:** No es óptimo para muchos resultados, deberíamos de agregar más filtros (como la fecha de la solicitud) para acotar resultados
-  
+  - De igual forma con `QueryAsync` realizamos la consulta, pero aquí hacemos algo un poco diferente
+    - Regresamos un stream de información con `IAsyncEnumerable` para ir procesando la información mientras la vamos consultando
+    - Como pueden ser miles de registros, no queremos consultarlos todos en memoría y luego convertirlos en un DTO
+    - Regresamos el `AsyncPage` que es una implementación de `IAsyncEnumerable` y la presentación se encargará de convertirlo a DTO con forme vaya llegando la información
+
 ### Program.cs
 
 Para terminar, usaremos **Minimal APIs** para crear los endpoints y exponero esta funcionalidad:
@@ -279,13 +272,18 @@ Hacemos uso de **Exception Filters** para regresar un `Bad Request` cuando quere
 Consulta de solicitudes por ciudad:
 
 ```csharp
-app.MapGet("api/vaccine-requests", async (string state, string city, IVaccineRequestStoreService store) =>
+app.MapGet("api/vaccine-requests", (string state, string city, IVaccineRequestStoreService store) =>
 {
-    var requests = await store.GetRequestsByCityAsync(state, city);
-
-    return requests.Select(s => new VaccineRequestDto(s.Curp, s.FullName, s.City, s.State));
+    return Results.Ok(store
+        .GetRequestsByCityAsync(state, city)
+        .Select(s => new VaccineRequestDto(s.Curp, s.FullName, s.City, s.State))
+    );
 });
 ```
+
+Aquí estamos aprovechando el `IAsyncEnumerable` para ir procesando y serializando la información al mismo tiempo que se va consultando. De esta forma estamos evitando cargar en memoría todos los datos, sino que los vamos procesando en un Stream de forma asíncrona.
+
+La idea no es regresar miles o millones de registros, la idea es poder consultar unos cientos dentro de miles o millones de registros, pero procesar la información así, es útil de igual forma si esto es de alta concurrencia.
 
 #### Endpoint POST api/vaccine-requests/{curp}
 
