@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "3589a662cfb575dc",
+        "id": "d7517e4320a99b31",
         "type": "tabs",
         "children": [
           {
-            "id": "d75538c7cdee9b05",
+            "id": "c39caaeb0f5b977c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -65,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 317.51190185546875
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md"
+              }
             }
           }
         ]
@@ -128,13 +136,12 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "0b4c63cd99a8a74c",
+  "active": "c39caaeb0f5b977c",
   "lastOpenFiles": [
-    "Posts/Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
+    "MiniValidator.TryValidate(widget,.md",
+    "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md",
     "Posts/DotNet Big Data con Azure Storage Tables.md",
+    "Posts/Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
     "README.md"
   ]
 }

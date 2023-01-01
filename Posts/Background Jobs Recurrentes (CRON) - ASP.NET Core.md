@@ -44,7 +44,7 @@ Instalamos la librería Cronos para poder _parsear_ expresiones CRON.
 dotnet add package Cronos
 ```
 
-### CronBackgroundJob
+### CronBackgroundJob (Opción 1)
 
 Esta clase base y abstracta, será la que se encargará de ejecutar un proceso según un intervalo de tiempo, este intervalo será definido como ya lo hemos dicho, con una expresión CRON.
 
@@ -105,6 +105,9 @@ public abstract class CronBackgroundJob : BackgroundService
 - **DoWork**: Este método abstracto será el que se ejecutará en cada ocurrencia, es abstracto porque cada Worker que hagamos, hará una tarea diferente.
 
 Al terminar de correr el `DoWork` de forma recursiva, mandamos a llamar nuevamente la tarea para agendar la siguiente ejecución, esto durará por siempre o hasta que el **stoppingToken** diga lo contrario.
+
+### Opción 2
+Después de dar un poco de vueltas, me di cuenta que 
 
 ### CronSettings
 
