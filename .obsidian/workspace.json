@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "d7517e4320a99b31",
+        "id": "3589a662cfb575dc",
         "type": "tabs",
         "children": [
           {
-            "id": "c39caaeb0f5b977c",
+            "id": "d75538c7cdee9b05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "fc86d2cc220bc384",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
+                "file": "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 317.51190185546875
+    "width": 300
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md"
               }
             }
           }
@@ -159,12 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fc86d2cc220bc384",
+  "active": "d75538c7cdee9b05",
   "lastOpenFiles": [
-    "MiniValidator.TryValidate(widget,.md",
-    "Posts/Minimal API - Validación con FluentValidation y Endpoint Filters.md",
-    "Posts/DotNet Big Data con Azure Storage Tables.md",
     "Posts/Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
+    "Posts/DotNet Big Data con Azure Storage Tables.md",
     "README.md"
   ]
 }
