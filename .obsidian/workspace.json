@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5d236ab21220d209",
+        "id": "e2df78eafbcbf53f",
         "type": "tabs",
         "children": [
           {
-            "id": "0547d463a81fd6df",
+            "id": "9dead6514e7a0ab6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "7bbad321e0fa77ed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 532.5119018554688
+    "width": 532.5119018554688,
+    "collapsed": true
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -98,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
+                "file": "Posts/06042023 - Auth0, Web y APIs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
+                "file": "Posts/06042023 - Auth0, Web y APIs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md"
+                "file": "Posts/06042023 - Auth0, Web y APIs.md"
               }
             }
           }
@@ -159,10 +147,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0b4c63cd99a8a74c",
+  "active": "9dead6514e7a0ab6",
   "lastOpenFiles": [
-    "Posts/06042023 - Auth0, Web y APIs.md",
     "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
+    "Posts/06042023 - Auth0, Web y APIs.md",
     "Posts/04042023 - ASP.NET Core MultiTenant Web API.md",
     "Posts/10032023 ASPNET Core API Key Authentication.md",
     "Posts/10102022 - DotNet Big Data con Azure Storage Tables.md",
