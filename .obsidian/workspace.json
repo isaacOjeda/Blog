@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "40f90956b265a3a7",
+        "id": "aa2b073247e69be2",
         "type": "tabs",
         "children": [
           {
-            "id": "6455b1ee24b4cd41",
+            "id": "c67334451b53c589",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/06052023 - Parte 14 - Paginación con Entity Frameework.md",
+                "file": "Posts/ddMMyyyy - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 532.5119018554688,
-    "collapsed": true
+    "width": 532.5119018554688
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/06052023 - Parte 14 - Paginación con Entity Frameework.md",
+                "file": "Posts/ddMMyyyy - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/06052023 - Parte 14 - Paginación con Entity Frameework.md",
+                "file": "Posts/ddMMyyyy - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/06052023 - Parte 14 - Paginación con Entity Frameework.md"
+                "file": "Posts/ddMMyyyy - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md"
               }
             }
           }
@@ -155,16 +154,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6455b1ee24b4cd41",
+  "active": "c67334451b53c589",
   "lastOpenFiles": [
-    "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
+    "Posts/06022023 - ASP.NET Core y OpenTelemetry.md",
+    "Posts/ddMMyyyy - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
     "Posts/06052023 - Parte 14 - Paginación con Entity Frameework.md",
+    "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
     "Posts/06042023 - Auth0, Web y APIs.md",
     "Posts/04042023 - ASP.NET Core MultiTenant Web API.md",
     "Posts/10032023 ASPNET Core API Key Authentication.md",
     "Posts/10102022 - DotNet Big Data con Azure Storage Tables.md",
     "Pasted image 20230405164023.png",
-    "Posts/06022023 - ASP.NET Core y OpenTelemetry.md",
     "Posts/30122022 - Minimal API - Validación con FluentValidation y Endpoint Filters.md",
     "README.md",
     "MiniValidator.TryValidate(widget,.md",
