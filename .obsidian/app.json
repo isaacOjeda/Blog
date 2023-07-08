@@ -2,6 +2,6 @@
   "livePreview": true,
   "spellcheck": true,
   "tabSize": 4,
-  "readableLineLength": false,
+  "readableLineLength": true,
   "foldIndent": false
 }
