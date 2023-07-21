@@ -1,6 +1,6 @@
 # Introducción
 
-En este tutorial, aprenderemos cómo implementar el patrón Outbox en una aplicación ASP.NET Core junto con Background Workers de .NET para mantener la consistencia y mejorar la escalabilidad en sistemas distribuidos. El Outbox Pattern es una técnica valiosa que nos permite manejar operaciones secundarias, como envío de correos electrónicos, generación de eventos o procesamiento de pagos, de manera confiable y consistente, al mismo tiempo que rastreamos cada evento.
+En este tutorial, aprenderemos cómo implementar el patrón Outbox en una aplicación ASP.NET Core junto con Background Workers de .NET para mantener la consistencia y mejorar la escalabilidad en sistemas distribuidos. El Outbox Pattern es una técnica valiosa que nos permite manejar operaciones secundarias, como envío de correos electrónicos, generación de eventos o cualquier operación asíncrona, de manera confiable y consistente, al mismo tiempo que rastreamos cada evento.
 
 > Nota 💡: Que no se pierda la costumbre, aquí puedes ver el código fuente 😄 [DevToPosts/OutboxPatternExample at main · isaacOjeda/DevToPosts (github.com)](https://github.com/isaacOjeda/DevToPosts/tree/main/OutboxPatternExample)
 
@@ -20,7 +20,27 @@ El Outbox Pattern es útil en diversas situaciones, especialmente en aplicacione
 4. **Mejora de la escalabilidad**: Utilizar un Background Worker para procesar los mensajes del Outbox permite liberar recursos de la aplicación principal, lo que contribuye a una mejor escalabilidad y rendimiento del sistema.
 5. **Trazabilidad y seguimiento de eventos**: Almacenar los mensajes del Outbox en una tabla de la base de datos permite rastrear las operaciones secundarias realizadas y tener un registro claro de los eventos procesados.
 
-En resumen, el Outbox Pattern es una valiosa técnica para garantizar la consistencia y confiabilidad en sistemas distribuidos, especialmente cuando se necesitan realizar operaciones secundarias asincrónicas o no transaccionales. Al separar las operaciones secundarias de la operación principal y utilizar un proceso en segundo plano para llevar a cabo estas tareas, podemos mejorar la robustez y escalabilidad de nuestras aplicaciones.
+El Outbox Pattern es una valiosa técnica para garantizar la consistencia y confiabilidad en sistemas distribuidos, especialmente cuando se necesitan realizar operaciones secundarias asincrónicas o no transaccionales. Al separar las operaciones secundarias de la operación principal y utilizar un proceso en segundo plano para llevar a cabo estas tareas, podemos mejorar la robustez y escalabilidad de nuestras aplicaciones.
+
+**Diagrama de lo que implementaremos hoy**
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b4wa7y6a6v0stml9wg2f.png)
+
+_[Ver más grande](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b4wa7y6a6v0stml9wg2f.png)_
+
+1. **Cliente** (Client): Representa el usuario o sistema que realiza una acción específica, en este caso, realiza una compra en la aplicación enviando una solicitud HTTP POST al **API**.
+2. **API**: Web API que recibe la solicitud de compra del cliente. En esta etapa, el API valida los datos recibidos, realiza las comprobaciones necesarias y, si todo está correcto, registra una "orden de cobro" que indica que se debe procesar un pago pendiente. Además, guarda el evento relacionado con la compra en la base de datos.
+3. **Database**: Es la base de datos donde el API almacena tanto la orden de cobro como el evento relacionado con la compra. Es importante destacar que ambos registros se realizan en una sola transacción, lo que garantiza la consistencia y evita posibles problemas de integridad.
+4. **Respuesta al Cliente**: El API envía una respuesta HTTP exitosa (código de estado 2xx) al cliente para indicar que la compra ha sido recibida y que el pago está pendiente.
+5. **Bucle del Procesamiento del Outbox**: Aquí comienza el proceso en segundo plano que se encarga de procesar los eventos pendientes, conocido como el **Worker**. Se inicia un bucle para revisar constantemente si existen mensajes en el "Outbox" (un registro en la base de datos que contiene eventos pendientes).
+6. **Worker**: Representa el proceso en segundo plano que realiza el procesamiento de los mensajes pendientes del "Outbox". En este caso, busca los mensajes pendientes en la base de datos.
+7. **Consulta de mensajes pendientes**: El **Worker** consulta la base de datos para obtener los mensajes pendientes de procesar.
+9. **Procesamiento del mensaje**: Una vez que el **Worker** obtiene un mensaje del "Outbox", procede a procesarlo. En este punto, el **Worker** puede interactuar con sistemas externos u otros servicios según sea necesario para completar la operación secundaria asociada al mensaje.
+	- **Nota sobre el Worker**: El **Worker** tiene la flexibilidad de interactuar con sistemas externos o realizar acciones adicionales según la naturaleza del evento. Esto permite que el procesamiento de eventos secundarios sea independiente y escalable.
+1. **Actualización de la base de datos**: Después de procesar con éxito el mensaje, el **Worker** actualiza el estado del mensaje en la base de datos para indicar que ha sido procesado satisfactoriamente.
+2. **Fin del bucle del Procesamiento del Outbox**: Una vez que el **Worker** ha procesado todos los mensajes pendientes en el "Outbox", finaliza el bucle y espera el próximo ciclo para verificar nuevamente si hay nuevos mensajes pendientes.
+
+El diagrama representa cómo funciona el patrón Outbox en una aplicación. Cuando un cliente realiza una acción que genera un evento secundario (como una compra), el evento se registra inicialmente en el "Outbox" de la base de datos, lo que garantiza la consistencia y durabilidad. Luego, un proceso en segundo plano (el **Worker**) se encarga de procesar los eventos pendientes, lo que permite realizar acciones secundarias de manera asíncrona y confiable sin afectar la operación principal. Esto mejora la escalabilidad y la confiabilidad del sistema, ya que el cliente recibe una respuesta inmediata mientras que las tareas adicionales se procesan de manera asincrónica y robusta.
 
 ## Implementando el Outbox Pattern en .NET
 
