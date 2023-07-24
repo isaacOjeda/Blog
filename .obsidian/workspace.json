@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "541e9d4c1118c069",
+        "id": "b97d9c6c9efd9e8b",
         "type": "tabs",
         "children": [
           {
-            "id": "872d38b29e0a1181",
+            "id": "17bf1c1a9dfd65f6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
+                "file": "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 508.51190185546875,
-    "collapsed": true
+    "width": 377.51190185546875
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
+                "file": "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
+                "file": "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md"
+                "file": "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md"
               }
             }
           }
@@ -155,8 +154,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "872d38b29e0a1181",
+  "active": "17bf1c1a9dfd65f6",
   "lastOpenFiles": [
+    "Desarrollo Seguro.md",
+    "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
+    "20 Tips de seguridad para Aplicaciones Web.md",
+    "Posts/Series/CQRS Series/06052023 - Parte 14 - Paginación con Entity Frameework.md",
+    "Posts/Series/CQRS Series/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
     "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
     "Posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
     "Posts/Auth0 y ASP.NET Cómo proteger tus aplicaciones web con autenticación avanzada.md",
@@ -168,8 +172,6 @@
     "Pasted image 20230603092326.png",
     "Pasted image 20230603093119.png",
     "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md",
-    "Posts/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
-    "Posts/06052023 - Parte 14 - Paginación con Entity Frameework.md",
     "Posts/06022023 - ASP.NET Core y OpenTelemetry.md",
     "Posts/06042023 - Auth0, Web y APIs.md",
     "Posts/04042023 - ASP.NET Core MultiTenant Web API.md",
