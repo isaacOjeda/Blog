@@ -4,22 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "c78f77c6bc91d891",
+        "id": "ae9c072b34f43247",
         "type": "tabs",
         "children": [
           {
-            "id": "04f03fb7a3c209d1",
+            "id": "6459f5677f97889a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "810aa3c2eb987d32",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Implementación de Health Checks en ASP.NET Core.md",
+                "file": "Top 10 OWASP 2021 - Cheat Sheet.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/Implementación de Health Checks en ASP.NET Core.md",
+                "file": "Top 10 OWASP 2021 - Cheat Sheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/Implementación de Health Checks en ASP.NET Core.md",
+                "file": "Top 10 OWASP 2021 - Cheat Sheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/Implementación de Health Checks en ASP.NET Core.md"
+                "file": "Top 10 OWASP 2021 - Cheat Sheet.md"
               }
             }
           }
@@ -155,8 +164,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "04f03fb7a3c209d1",
+  "active": "810aa3c2eb987d32",
   "lastOpenFiles": [
+    "Top 10 OWASP 2021 - Cheat Sheet.md",
+    "README.md",
     "Posts/Implementación de Health Checks en ASP.NET Core.md",
     "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
     "Desarrollo Seguro.md",
@@ -167,7 +178,6 @@
     "Posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
     "Posts/Auth0 y ASP.NET Cómo proteger tus aplicaciones web con autenticación avanzada.md",
     "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
-    "README.md",
     "Pasted image 20230603092109.png",
     "Pasted image 20230603081926.png",
     "Pasted image 20230603092152.png",
