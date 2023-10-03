@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ae9c072b34f43247",
+        "id": "6fb860ce641f5ef2",
         "type": "tabs",
         "children": [
           {
-            "id": "6459f5677f97889a",
+            "id": "a88fa1a45a78eb2f",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -16,12 +16,12 @@
             }
           },
           {
-            "id": "810aa3c2eb987d32",
+            "id": "998dcf40fc6de4e5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Top 10 OWASP 2021 - Cheat Sheet.md",
+                "file": "Posts/Decorator Pattern.md",
                 "mode": "source",
                 "source": false
               }
@@ -47,7 +47,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime"
+                "sortOrder": "byCreatedTime"
               }
             }
           },
@@ -86,8 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 377.51190185546875,
-    "collapsed": true
+    "width": 377.51190185546875
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -103,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Top 10 OWASP 2021 - Cheat Sheet.md",
+                "file": "Posts/Decorator Pattern.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Top 10 OWASP 2021 - Cheat Sheet.md",
+                "file": "Posts/Decorator Pattern.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +142,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Top 10 OWASP 2021 - Cheat Sheet.md"
+                "file": "Posts/Decorator Pattern.md"
+              }
+            }
+          },
+          {
+            "id": "b375f0eeda0394f8",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
               }
             }
           }
@@ -164,20 +173,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "810aa3c2eb987d32",
+  "active": "998dcf40fc6de4e5",
   "lastOpenFiles": [
+    "Posts/Decorator Pattern.md",
+    "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
+    "Posts/Implementación de Health Checks en ASP.NET Core.md",
+    "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
+    "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
+    "Pasted.md",
     "Top 10 OWASP 2021 - Cheat Sheet.md",
     "README.md",
-    "Posts/Implementación de Health Checks en ASP.NET Core.md",
-    "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
     "Desarrollo Seguro.md",
     "20 Tips de seguridad para Aplicaciones Web.md",
     "Posts/Series/CQRS Series/06052023 - Parte 14 - Paginación con Entity Frameework.md",
     "Posts/Series/CQRS Series/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
-    "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
     "Posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
     "Posts/Auth0 y ASP.NET Cómo proteger tus aplicaciones web con autenticación avanzada.md",
-    "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
     "Pasted image 20230603092109.png",
     "Pasted image 20230603081926.png",
     "Pasted image 20230603092152.png",
