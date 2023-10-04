@@ -1,44 +1,29 @@
 # ASP.NET Core y el Patrón Decorador: Ampliando la Funcionalidad de tus APIs
+
 # Introducción
 
-En el mundo de la programación, a veces necesitamos mejorar nuestras aplicaciones de una manera que sea fácil de entender y mantener. El "Decorator Pattern" (Patrón Decorador) nos ofrece una solución práctica. En este artículo, exploraremos cómo usar este patrón en Web APIs con ASP.NET Core. Aprenderemos cómo añadir características adicionales a nuestros servicios sin tocar el código original. Veremos ejemplos concretos, como la implementación de caché y registros, que hacen que nuestras aplicaciones sean más flexibles y poderosas.
-
-Así que, si estás interesado en mejorar tus habilidades de programación y hacer tus aplicaciones más versátiles, ¡sigue leyendo! Vamos a sumergirnos en el mundo del Patrón Decorador y ver cómo puede ser una herramienta valiosa en el desarrollo de aplicaciones web modernas.
-
+En la programación, el "Decorator Pattern" (Patrón Decorador) mejora aplicaciones sin complicaciones. Exploraremos su uso en Web APIs con ASP.NET Core. Añadiremos funcionalidad extra sin tocar el código original. Ejemplos incluyen caché y registros, mejorando la flexibilidad y potencia.
 ## El Patrón Decorador
 
-El Patrón Decorador es una técnica de diseño que se centra en la mejora dinámica de objetos sin alterar su estructura original. En su esencia, permite que los objetos se envuelvan en capas adicionales de funcionalidad, lo que los hace más flexibles y personalizables. Aquí hay cinco puntos clave para comprender este patrón:
+Este patrón mejora objetos sin modificarlos. Añade capas de funcionalidad sin afectar otras ni el objeto original. Cada decorador se enfoca en una tarea específica, promoviendo un código modular. Flexibilidad para mezclar y combinar decoradores según necesites. Facilita la mantenibilidad a largo plazo.
 
-1. **Extensibilidad Sin Modificaciones:** Una de las ventajas principales del Patrón Decorador es su capacidad para extender la funcionalidad de objetos existentes sin modificar su código. Esto significa que podemos agregar o modificar comportamientos sin tocar el núcleo del objeto.
-2. **Composición de Capas:** El Patrón Decorador se basa en la composición. Utiliza múltiples capas de decoradores que envuelven un objeto base. Cada capa añade cierta funcionalidad sin afectar las otras capas ni el objeto original.
-3. **Separación de Responsabilidades:** Permite que cada decorador se centre en una responsabilidad específica. Esto lleva a un código más limpio y modular, donde cada decorador tiene una tarea bien definida.
-4. **Flexibilidad:** La aplicación del Patrón Decorador es altamente flexible. Puedes mezclar y combinar decoradores para crear configuraciones personalizadas. Esto es especialmente útil cuando necesitas adaptar un objeto a diferentes contextos o requerimientos.
-5. **Mantenibilidad:** Al evitar la modificación del código original, el Patrón Decorador facilita la mantenibilidad a largo plazo. Los cambios en la funcionalidad se realizan mediante la adición o eliminación de decoradores, lo que reduce el riesgo de introducir errores en el código existente.
+**Ejemplo práctico: API del Clima con Decoradores**
 
-En este post, exploraremos cómo aplicar el Patrón Decorador en el desarrollo de Web APIs con ASP.NET Core. Veremos cómo esta técnica nos permite extender la funcionalidad de nuestros servicios de manera modular, enriqueciéndolos con características como la caché y el registro de actividades. A medida que avancemos, descubrirás cómo el Patrón Decorador puede ser una herramienta poderosa para mejorar la flexibilidad y la extensibilidad de tus aplicaciones web.
+Exploraremos el patrón decorador en una Web API ASP.NET Core. Crearemos un servicio que consulta datos meteorológicos de la API de Open Meteor.
 
-## Ejemplo práctico: Llamada a API de Clima con decoradores
+**Servicio Base:**
+Inicialmente, este servicio consumirá la API de Open Meteor para proporcionar datos climáticos.
 
-En este post, vamos a explorar la implementación del patrón decorador en el contexto de una Web API en ASP.NET Core. Para ilustrar su utilidad, crearemos un servicio que consulta datos meteorológicos a través de una API externa, en este caso, la API de Open Meteor.
+**Decorador de Caché:**
+Optimizará las llamadas a la API almacenando temporalmente resultados en caché y devolviéndolos si la solicitud se repite, sin alterar el código original.
 
-**El Servicio Base:**
+**Decorador de Logs:**
+Registrará cada llamada a la API sin afectar la lógica fundamental del servicio base.
 
-Inicialmente, nuestro servicio base tendrá una función simple: consumir la API de Open Meteor y proporcionar los datos climáticos necesarios para nuestra aplicación. Esta funcionalidad es esencial para nuestra Web API, pero podemos llevarla aún más lejos.
+**Resumen:**
+Los decoradores enriquecen una Web API sin modificar su núcleo. Utilizaremos un servicio de consulta de datos meteorológicos como ejemplo para agregar caché y registros. Esto demuestra la versatilidad y capacidad de extensión del patrón decorador en nuestras aplicaciones web.
 
-**Añadiendo el Decorador de Caché:**
-
-Uno de los primeros decoradores que implementaremos se centrará en la optimización de las llamadas a la API de Open Meteor mediante el uso de caché. Esto significa que, en lugar de consultar la API cada vez que necesitamos datos meteorológicos, almacenaremos temporalmente los resultados en caché y los devolveremos desde allí si la misma solicitud se repite en un período de tiempo definido. Lo interesante es que podemos lograr este objetivo sin modificar el código original del servicio base, simplemente agregando funcionalidad adicional con el patrón decorador.
-
-**Incorporando un Decorador de Registros:**
-
-Para comprender mejor el flujo de datos y asegurarnos de que nuestras solicitudes estén funcionando correctamente, implementaremos otro decorador que se encargará de registrar cada llamada que hacemos a la API de Open Meteor. Esto nos proporcionará información de seguimiento y depuración sin perturbar la lógica fundamental del servicio base.
-
-En este punto, cabe destacar que este enfoque es similar a los "Behaviours" de MediatR, que también emplean el patrón decorador para agregar comportamiento a las solicitudes y manipularlas de manera flexible sin alterar su estructura original.
-
-En resumen, a lo largo de este post, veremos cómo los decoradores pueden enriquecer una Web API en ASP.NET Core sin necesidad de modificar su núcleo. Utilizaremos el ejemplo de un servicio de consulta de datos meteorológicos para mostrar cómo agregar caché y registros, lo que demuestra la versatilidad y la capacidad de extensión que el patrón decorador aporta a nuestras aplicaciones web.
-
-¡Vamos a sumergirnos en la implementación práctica y explorar cómo estos decoradores pueden mejorar la eficiencia y la capacidad de seguimiento de nuestra Web API!
-
+¡Exploraremos la implementación y cómo estos decoradores mejoran la eficiencia y el seguimiento de nuestra Web API!
 ### Proyecto Web API con .NET 8
 
 En este post, he optado por utilizar .NET 8, ya que esta versión introduce una característica extremadamente útil conocida como `KeyedServices`.
