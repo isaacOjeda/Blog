@@ -4,31 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "6fb860ce641f5ef2",
+        "id": "48a05c9516a351da",
         "type": "tabs",
         "children": [
           {
-            "id": "a88fa1a45a78eb2f",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "998dcf40fc6de4e5",
+            "id": "bde021dec1e6d804",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Decorator Pattern.md",
+                "file": "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/Decorator Pattern.md",
+                "file": "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/Decorator Pattern.md",
+                "file": "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/Decorator Pattern.md"
+                "file": "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md"
               }
             }
           },
@@ -173,8 +164,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "998dcf40fc6de4e5",
+  "active": "bde021dec1e6d804",
   "lastOpenFiles": [
+    "Posts/Series/CQRS Series/08042022 - Mejorando la Organización de Código con Vertical Slice Architecture (Parte 6).md",
+    "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md",
+    "Posts/Series/CQRS Series/07042022 - Autenticación y Autorización con JWT en ASP.NET Core (Parte 5).md",
+    "Posts/Series/CQRS Series/02042022 - Hashids en ASP.NET Core - Protegiendo tus URLs (Parte 4).md",
+    "Posts/Series/CQRS Series/02042022 - Simplificando el Mapeo de Entidades con AutoMapper en CQRS (Parte 3).md",
+    "Posts/Series/CQRS Series/31032022 - CQRS y Validaciones Construyendo APIs Robustas con MediatR y FluentValidation (Parte 2).md",
+    "Posts/Series/CQRS Series/31032022 - Desarrollando una API en ASP.NET con CQRS y MediatR Parte 1.md",
+    "Posts/Explorando la Autenticación Bearer en ASP.NET Core 8.md",
     "Posts/Decorator Pattern.md",
     "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
     "Posts/Implementación de Health Checks en ASP.NET Core.md",
@@ -198,11 +197,6 @@
     "Posts/06022023 - ASP.NET Core y OpenTelemetry.md",
     "Posts/06042023 - Auth0, Web y APIs.md",
     "Posts/04042023 - ASP.NET Core MultiTenant Web API.md",
-    "Posts/10032023 ASPNET Core API Key Authentication.md",
-    "Posts/10102022 - DotNet Big Data con Azure Storage Tables.md",
-    "Pasted image 20230405164023.png",
-    "Posts/30122022 - Minimal API - Validación con FluentValidation y Endpoint Filters.md",
-    "MiniValidator.TryValidate(widget,.md",
-    "Posts/27102022 - Background Jobs Recurrentes (CRON) - ASP.NET Core.md"
+    "Pasted image 20230405164023.png"
   ]
 }
