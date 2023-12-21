@@ -26,7 +26,7 @@ La implementación de una caché distribuida puede ser beneficiosa en varios esc
 
 - Acceso Frecuente a Datos Estáticos o Poco Cambiantes
 - Acceso a información costosa de sistemas externos o bases de datos
-- Escalabilidad
+- Escalabilidad horizontal
 
 ### Implementaciones de Caché Distribuida en ASP.NET Core
 
@@ -162,7 +162,7 @@ La función `AddDistributedMemoryCache` registra las dependencias como `IDistrib
 
 Por otro lado, al añadir `AddStackExchangeRedisCache`, estamos incorporando la implementación de `IDistributedCache`, esta vez con Redis. Sin embargo, es fundamental tener la infraestructura necesaria para poder probar y utilizar Redis en un entorno de desarrollo. Este enfoque nos permite aprovechar las capacidades de Redis como sistema de caché distribuido y representa una opción sólida cuando ya buscamos tener algo en producción.
 
-Además agregamos un endpoint que simula la consulta al clima desde un servicio externo. Si los datos climáticos no están en la caché, se generan datos aleatorios para 5 días y se almacenan en la caché con una expiración de 5 minutos. Si los datos están en la caché, se devuelven desde la caché para evitar consultas frecuentes al servicio externo.
+Además agregamos un endpoint que simula la consulta al clima desde un servicio externo. Si los datos climáticos no están en la caché, generamos datos aleatorios de prueba, pero en un caso real, tendríamos que llamar a una API del clima. Si los datos están en la caché, se devuelven desde la caché para evitar consultas frecuentes al servicio externo.
 
 También se agregó la cadena de conexión para la comunicación con Redis en el archivo de configuración:
 
@@ -180,14 +180,17 @@ También se agregó la cadena de conexión para la comunicación con Redis en el
   }
 }
 ```
+
+> Nota 💡: Aquí en la cadena de conexión estamos poniendo el nombre del host que tendrá en la red de Docker (lo veremos en la sección de infraestructura) pero si no se usa docker, tendríamos que poner el host y puerto que apunten a la instancia de Redis.
+
 #### Infraestructura
 
 Antes de ejecutar la aplicación, es necesario tener Redis en funcionamiento.
 
-En este ejemplo, opté por utilizar Docker y docker-compose, pero tienes libertad para elegir el método que prefieras.
+En este ejemplo, opté por utilizar Docker y docker-compose, pero tienes libertad para elegir el método que prefieras. En este [enlace](https://redis.io/docs/install/) puedes leer más sobre Redis y su instalación.
 ##### Archivo Docker
 
-El siguiente archivo Docker fue generado por Visual Studio al añadir soporte para docker-compose. Puedes seguir este ejemplo o escribirlo manualmente (o simplemente ignorarlo, no es imprescindible):
+El siguiente archivo Docker fue generado por Visual Studio al añadir soporte para Docker y docker-compose. Puedes seguir este ejemplo o escribirlo manualmente (o simplemente ignorarlo, no es imprescindible):
 
 ```d
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
@@ -252,6 +255,8 @@ volumes:
     driver: local
 ```
 
+> Nota 💡: También puedes usar .NET Aspire ([.NET Aspire overview - .NET Aspire | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)), que es una forma mucho más sencilla de orquestar esta infraestructura
+
 Con esto será suficiente para correr la aplicación.
 ### Probando el Caché
 
@@ -281,7 +286,9 @@ Al ejecutar este endpoint, observarás que se crea una entrada de caché en Redi
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q1m2gckgq7m0x6l9lorx.png)
 
+De esta forma, estamos confirmando que el caché funciona, si ejecutas varias veces el endpoint, se estará leyendo esta información del caché.
 
+En un escenario real, esto ayuda a optimizar el rendimiento, evitando consultar información costosa de forma innecesaria. Cada caso es distinto, pero el principio es el mismo y esto es una pequeña introducción. [Aquí](https://github.com/mgravell/DistributedCacheDemo) vemos una implementación más completa sobre este mismo principio.
 # Conclusión
 
 El caché distribuido en ASP.NET Core se revela como una herramienta imprescindible para optimizar el rendimiento y la escalabilidad de tus aplicaciones. La capacidad de compartir datos en caché entre múltiples servidores, garantizando coherencia y supervivencia a reinicios o despliegues, abre un abanico de posibilidades para mejorar la eficiencia y la experiencia del usuario.
