@@ -1,7 +1,7 @@
 {
   "accentColor": "#622d91",
   "cssTheme": "Flexoki",
-  "theme": "obsidian",
+  "theme": "moonstone",
   "baseFontSize": 17,
   "enabledCssSnippets": [
     "custom-width"
