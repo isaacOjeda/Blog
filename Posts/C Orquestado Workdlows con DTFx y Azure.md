@@ -3,6 +3,7 @@
 
 En la era de las aplicaciones modernas y servicios en la nube, la gestión eficiente de flujos de trabajo largos y persistentes es esencial para el desarrollo de aplicaciones robustas. En este contexto, el Durable Task Framework emerge como una herramienta poderosa para la creación de workflows en entornos C#, ofreciendo capacidades avanzadas de orquestación y manejo de estados. Acompañado por el Azure Storage Emulator, conocido como Azurite, que proporciona una forma local de emular los servicios de almacenamiento de Azure, esta combinación facilita el desarrollo, prueba y depuración de aplicaciones basadas en workflows. A lo largo de este artículo, exploramos la implementación de workflows con estas tecnologías, destacando su utilidad y eficacia en la construcción de sistemas resilientes y escalables.
 
+Cómo siempre, aquí encontrarás el código de este post: [DevToPosts/DurableTask · isaacOjeda/DevToPosts (github.com)](https://github.com/isaacOjeda/DevToPosts/tree/main/DurableTask)
 ## Durable Task Framework
 
 El Durable Task Framework (DTFx) es una biblioteca que permite a los usuarios escribir flujos de trabajo persistentes de larga duración (llamados orquestaciones) en C# utilizando simples instrucciones de código `async`/`await`. Se utiliza ampliamente dentro de varios equipos en Microsoft para orquestar de manera confiable operaciones de aprovisionamiento, monitoreo y gestión de larga duración. Las orquestaciones se escalan de manera lineal simplemente agregando más máquinas de trabajo. Este marco también se utiliza para alimentar la extensión serverless **Durable Functions de Azure Functions**.
@@ -35,8 +36,6 @@ Para garantizar la consistencia en estos casos, es crucial considerar lo siguien
 - Si el nodo de ejecución se bloquea, debe reiniciarse desde el último lugar donde se realizó una operación exitosa (por ejemplo, #1 o #2 anteriormente).
 
 Estos dos elementos son esenciales para mantener la integridad del sistema. La idempotencia puede ser asegurada por la implementación de las operaciones de débito/crédito, mientras que el reinicio desde el último punto exitoso puede lograrse mediante el seguimiento de la posición actual en alguna base de datos. Sin embargo, gestionar este estado puede volverse engorroso, especialmente a medida que el número de operaciones duraderas aumenta. Aquí es donde un framework para la gestión automática del estado simplificaría significativamente la experiencia de construir flujos de trabajo basados en código. Para esto, usaremos **DTFx**.
-
-
 ### Funcionamiento de los Workflows en el Durable Task Framework
 
 #### ¿Cómo Funcionan los Workflows?
@@ -47,20 +46,16 @@ Los Workflows en el Durable Task Framework se componen de orquestaciones, activi
    - Las orquestaciones son el corazón de los workflows y representan el flujo general del trabajo a realizar.
    - Programan actividades y coordinan su ejecución.
    - Pueden contener lógica empresarial, manejar decisiones y gestionar el flujo de control.
-
 2. **Actividades:**
    - Las actividades son unidades de trabajo atómicas dentro de un flujo de trabajo.
    - Realizan tareas específicas, como realizar operaciones en una base de datos, enviar correos electrónicos, etc.
    - Pueden ser ejecutadas de manera independiente y son diseñadas para ser **idempotentes**.
-
 3. **Task Hub:**
    - El Task Hub es un componente clave que actúa como contenedor lógico para las entidades.
    - Facilita el intercambio de mensajes confiable entre las orquestaciones y las actividades.
-
 4. **Task Hub Worker:**
    - El Task Hub Worker es el entorno de ejecución para las orquestaciones y actividades.
    - Hospeda las orquestaciones y se encarga de la ejecución de las actividades en el momento adecuado.
-
 5. **Task Hub Client:**
    - El Task Hub Client proporciona APIs para crear, gestionar y consultar instancias de orquestaciones.
    - Facilita la interacción con el Task Hub y permite iniciar nuevas instancias de orquestaciones.
@@ -457,9 +452,13 @@ Observamos cómo la simulación de un fallo ocurrió en un par de ocasiones, sin
 
 En conclusión, la implementación de workflows utilizando el Durable Task Framework en conjunto con el Azure Storage demuestra ser una solución robusta y escalable para gestionar procesos largos y persistentes en aplicaciones basadas en C#. La capacidad del framework para manejar automáticamente reintentos en caso de fallos, junto con la flexibilidad proporcionada por Azurite para simular el entorno de almacenamiento de Azure localmente, facilita el desarrollo y la depuración de workflows, garantizando la confiabilidad y consistencia en escenarios críticos. La combinación de estas herramientas ofrece a los desarrolladores una poderosa infraestructura para orquestar flujos de trabajo complejos de manera eficiente y confiable.
 
-## Referencias
+## Referencias y Links de interés
 
 - [Home · Azure/durabletask Wiki (github.com)](https://github.com/Azure/durabletask/wiki)
 - [Durable Task Framework Internals - Part 1 (Dataflow and Reliability) | Abhik's Blog (abhikmitra.github.io)](https://abhikmitra.github.io/blog/durable-task/)
 - [Dependency Injection with Durable Task Framework | Andrew Stevens](https://andrewstevens.dev/posts/dependency-injection-durable-task/)
-- 
+- [Goodbye long procedural code! Fix it with workflows (youtube.com)](https://www.youtube.com/watch?v=WjzojcyNp4U&ab_channel=CodeOpinion)
+- [Durable Task Framework Internals - Part 1 (Dataflow and Reliability) | Abhik's Blog (abhikmitra.github.io)](https://abhikmitra.github.io/blog/durable-task/)
+- [Sagas · MassTransit](https://masstransit.io/documentation/configuration/sagas/overview)
+- [Sagas • NServiceBus • Particular Docs](https://docs.particular.net/nservicebus/sagas/)
+- [Workflow overview | Dapr Docs](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)

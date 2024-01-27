@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Workflows con Durable Task Framework.md",
+                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/Workflows con Durable Task Framework.md",
+                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/Workflows con Durable Task Framework.md",
+                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/Workflows con Durable Task Framework.md"
+                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md"
               }
             }
           },
@@ -173,7 +173,7 @@
     "Posts/Minimal API.md",
     "Posts/Mejorando Rendimiento y Escalabilidad Guía de Caché Distribuido en ASP.NET Core.md",
     "Posts/FluentResults Simplificando el Manejo de Resultados y Errores en Aplicaciones .NET.md",
-    "Posts/Workflows con Durable Task Framework.md",
+    "Posts/C Orquestado Workdlows con DTFx y Azure.md",
     "Posts/Series/CQRS Series/14042022 - Serilog en ASP.NET Core Más Allá de los Logs Básicos - Parte 9.md",
     "Posts/Series/CQRS Series/13042022 - Pruebas de Integración en ASP.NET Core y CQRS Parte 8.md",
     "Posts/Series/CQRS Series/08042022 - Mejorando la Organización de Código con Vertical Slice Architecture (Parte 6).md",
