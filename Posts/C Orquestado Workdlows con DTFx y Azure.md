@@ -1,12 +1,11 @@
-
 ## Introducción
 
-En la era de las aplicaciones modernas y servicios en la nube, la gestión eficiente de flujos de trabajo largos y persistentes es esencial para el desarrollo de aplicaciones robustas. En este contexto, el Durable Task Framework emerge como una herramienta poderosa para la creación de workflows en entornos C#, ofreciendo capacidades avanzadas de orquestación y manejo de estados. Acompañado por el Azure Storage Emulator, conocido como Azurite, que proporciona una forma local de emular los servicios de almacenamiento de Azure, esta combinación facilita el desarrollo, prueba y depuración de aplicaciones basadas en workflows. A lo largo de este artículo, exploramos la implementación de workflows con estas tecnologías, destacando su utilidad y eficacia en la construcción de sistemas resilientes y escalables.
+En la era de las aplicaciones modernas y servicios en la nube, la gestión eficiente de flujos de trabajo largos y persistentes es esencial para el desarrollo de aplicaciones robustas. En este contexto, el Durable Task Framework emerge como una herramienta para la creación de workflows en entornos C#, ofreciendo capacidades avanzadas de orquestación y manejo de estados. Acompañado por el Azure Storage Emulator, que proporciona una forma local de emular los servicios de almacenamiento de Azure, esta combinación facilita el desarrollo, prueba y depuración de aplicaciones basadas en workflows. A lo largo de este post, exploramos la implementación de workflows con estas tecnologías, destacando su utilidad y eficacia en la construcción de sistemas resilientes y escalables.
 
 Cómo siempre, aquí encontrarás el código de este post: [DevToPosts/DurableTask · isaacOjeda/DevToPosts (github.com)](https://github.com/isaacOjeda/DevToPosts/tree/main/DurableTask)
 ## Durable Task Framework
 
-El Durable Task Framework (DTFx) es una biblioteca que permite a los usuarios escribir flujos de trabajo persistentes de larga duración (llamados orquestaciones) en C# utilizando simples instrucciones de código `async`/`await`. Se utiliza ampliamente dentro de varios equipos en Microsoft para orquestar de manera confiable operaciones de aprovisionamiento, monitoreo y gestión de larga duración. Las orquestaciones se escalan de manera lineal simplemente agregando más máquinas de trabajo. Este marco también se utiliza para alimentar la extensión serverless **Durable Functions de Azure Functions**.
+El Durable Task Framework (DTFx) es una biblioteca que permite a los usuarios escribir flujos de trabajo persistentes de larga duración (llamados orquestaciones) en C# utilizando simples instrucciones de código `async`/`await`. Se utiliza ampliamente dentro de varios equipos en Microsoft para orquestar de manera confiable operaciones de aprovisionamiento, monitoreo y gestión de larga duración. Las orquestaciones se escalan de manera lineal simplemente agregando más máquinas de trabajo. Este framework también se utiliza para alimentar la extensión serverless **Durable Functions de Azure Functions**.
 
 **Características clave del framework:**
 - Definición de orquestaciones de código en C# simple.
@@ -17,8 +16,8 @@ El Durable Task Framework (DTFx) es una biblioteca que permite a los usuarios es
 
 En diversos escenarios, nos encontramos con la necesidad de actualizar estados o ejecutar acciones en múltiples ubicaciones de manera transaccional. Por ejemplo, realizar un cargo en una cuenta de la base de datos A y abonarlo a otra cuenta en la base de datos B debe llevarse a cabo de manera **atómica**. La consistencia en este tipo de operaciones se logra tradicionalmente mediante el uso de transacciones distribuidas que abarcan las operaciones de débito y crédito en las bases de datos A y B, respectivamente.
 
-No obstante, la aplicación estricta de transacciones conlleva desafíos significativos. El uso de bloqueos, inherente a las transacciones, puede ser perjudicial para la escalabilidad, ya que las operaciones subsiguientes que requieren el mismo bloqueo se verían bloqueadas hasta que se libere. Esto representa un importante cuello de botella de escalabilidad para los servicios en la nube, diseñados para ser altamente disponibles y consistentes. Además, incluso si decidimos asumir el impacto de una transacción distribuida, nos encontraríamos con la limitación de que casi ningún servicio en la nube admite efectivamente transacciones distribuidas.
-#### Alternativa: Flujos de Trabajo (Workflows)
+No obstante, la aplicación estricta de transacciones conlleva desafíos significativos. El uso de bloqueos, inherente a las transacciones, puede ser perjudicial para la escalabilidad, ya que las operaciones subsiguientes que requieren el mismo bloqueo se verían bloqueadas hasta que se libere. Esto representa un importante cuello de botella de escalabilidad para los servicios en la nube, diseñados para ser altamente disponibles y consistentes.
+#### Flujos de Trabajo (Workflows)
 
 Una alternativa para lograr consistencia es ejecutar la lógica de débito y crédito dentro de un flujo de trabajo duradero. En este enfoque, el flujo de trabajo realiza las siguientes acciones:
 
@@ -36,7 +35,7 @@ Para garantizar la consistencia en estos casos, es crucial considerar lo siguien
 - Si el nodo de ejecución se bloquea, debe reiniciarse desde el último lugar donde se realizó una operación exitosa (por ejemplo, #1 o #2 anteriormente).
 
 Estos dos elementos son esenciales para mantener la integridad del sistema. La idempotencia puede ser asegurada por la implementación de las operaciones de débito/crédito, mientras que el reinicio desde el último punto exitoso puede lograrse mediante el seguimiento de la posición actual en alguna base de datos. Sin embargo, gestionar este estado puede volverse engorroso, especialmente a medida que el número de operaciones duraderas aumenta. Aquí es donde un framework para la gestión automática del estado simplificaría significativamente la experiencia de construir flujos de trabajo basados en código. Para esto, usaremos **DTFx**.
-### Funcionamiento de los Workflows en el Durable Task Framework
+### Funcionamiento de los Workflows con Durable Task Framework
 
 #### ¿Cómo Funcionan los Workflows?
 
@@ -60,6 +59,8 @@ Los Workflows en el Durable Task Framework se componen de orquestaciones, activi
    - El Task Hub Client proporciona APIs para crear, gestionar y consultar instancias de orquestaciones.
    - Facilita la interacción con el Task Hub y permite iniciar nuevas instancias de orquestaciones.
 
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ig6nlklisdfzxv9h7rj.png)
+
 #### ¿Cómo Ayudan los Workflows a Resolver el Problema Planteado?
 
 En el problema descrito anteriormente, donde múltiples acciones deben realizarse de manera transaccional, los workflows ofrecen una alternativa efectiva:
@@ -77,7 +78,7 @@ En el problema descrito anteriormente, donde múltiples acciones deben realizars
 
 ## Creando un Workflow con DTFx
 
-En este ejemplo, vamos a construir un workflow simple utilizando el Durable Task Framework (DTFx). El objetivo es simular un proceso de cobro, generación de factura y manejar posibles errores de manera elegante. Aunque el ejemplo es básico, nos proporcionará una comprensión práctica de cómo funciona DTFx.
+En este ejemplo, vamos a construir un workflow simple utilizando el Durable Task Framework (DTFx). El objetivo es simular un proceso de cobro, generación de factura y manejar posibles errores. Aunque el ejemplo es básico, nos proporcionará una comprensión práctica de cómo funciona DTFx.
 ### Escenario del Workflow
 
 El workflow consta de los siguientes pasos:
@@ -94,9 +95,43 @@ Este ejemplo, aunque simple, nos proporcionará una visión práctica del funcio
 Es importante destacar que, aunque DTFx es compatible con .NET Core, no proporciona una forma predeterminada de resolver dependencias. Dado que estaremos utilizando ASP.NET Core y queremos seguir su estilo, exploraremos cómo resolver este aspecto de manera elegante y eficiente en este ejemplo.
 
 Sigamos adelante y detallaremos la implementación paso a paso.
+
+### Paquetes a Utilizar
+
+Para utilizar DTFx, solo necesitaremos estos dos paquetes:
+
+```xml
+<PackageReference Include="Microsoft.Azure.DurableTask.AzureStorage" Version="1.17.1" />
+<PackageReference Include="Microsoft.Azure.DurableTask.Core" Version="2.16.1" />
+```
+
+#### Proveedores de Almacenamiento
+
+Proveedores de almacenamiento admitidos por Durable Task Framework:
+
+1. **DurableTask.ServiceBus**
+    - Almacena el mensaje y el estado en tiempo de ejecución de la orquestación en colas de Service Bus, mientras que el estado de seguimiento se guarda en Azure Storage. Destaca por su madurez y consistencia transaccional, aunque ya no está en desarrollo activo por parte de Microsoft.
+    - Estado de desarrollo: Listo para producción pero no se mantiene activamente.
+2. **DurableTask.AzureStorage**
+    - Almacena todo el estado de la orquestación en colas, tablas y blobs de Azure Storage. Destaca por sus mínimas dependencias de servicios, alta eficiencia y conjunto de funciones robusto. Es el único backend disponible para Durable Functions.
+    - Estado de desarrollo: Listo para producción y se mantiene activamente.
+3. **DurableTask.AzureServiceFabric**
+    - Almacena todo el estado de la orquestación en las Reliable Collections de Azure Service Fabric. Es una opción ideal para aplicaciones alojadas en Azure Service Fabric que no desean depender de servicios externos para almacenar el estado.
+    - Estado de desarrollo: Listo para producción y se mantiene activamente.
+4. **DurableTask.Netherite**
+    - Backend de ultra alto rendimiento desarrollado por Microsoft Research, donde el estado se almacena en Azure Event Hubs y Azure Page Blobs utilizando la tecnología FASTER database. Repositorio en GitHub
+    - Estado de desarrollo: Listo para producción y se mantiene activamente.
+5. **DurableTask.SqlServer**
+    - Almacena todo el estado de la orquestación en una base de datos Microsoft SQL Server o Azure SQL con tablas indexadas y procedimientos almacenados para interacción directa. Repositorio en GitHub
+    - Estado de desarrollo: Listo para producción y se mantiene activamente.
+6. **DurableTask.Emulator**
+    - Almacén en memoria diseñado exclusivamente para fines de prueba. No se recomienda ni está diseñado para cargas de trabajo en producción.
+    - Estado de desarrollo: No se mantiene activamente.
 ### CreatePaymentActivity
 
-Este activity se "encargará" de realizar el cobro:
+Utilizando `dotnet new web`, tendremos una aplicación base para comenzar a hacer el workflow.
+
+Y como primer paso en el workflow, tendremos este activity que se "encargará" de realizar el cobro:
 
 ```csharp
 using DurableTask.Core;
@@ -109,7 +144,7 @@ public class CreatePaymentActivity(ILogger<CreatePaymentActivity> logger)
     {
         logger.LogInformation("\nCreating payment for order {OrderId} with payment method {PaymentMethodId}\n",
             input.OrderId, input.PaymentMethodId);
- 
+        // TODO: Create a real payment
         await Task.Delay(new Random().Next(1, 5) * 1000);
  
         return new CreatePaymentResponse(Guid.NewGuid().ToString());
@@ -121,9 +156,9 @@ public record CreatePaymentResponse(string PaymentId);
 ```
 
 - Se define la clase `CreatePaymentActivity` que hereda de `AsyncTaskActivity<CreatePaymentRequest, CreatePaymentResponse>`, indicando que es una actividad asincrónica que toma una solicitud `CreatePaymentRequest` y devuelve una respuesta `CreatePaymentResponse`.
-- En el constructor de la actividad, se inyecta un logger (`ILogger<CreatePaymentActivity>`).
+- Utilizando _primary constructors_ inyectamos el clásico logger (`ILogger<CreatePaymentActivity>`).
 - El método `ExecuteAsync` contiene la lógica principal de la actividad. Registra información, simula un retraso aleatorio y luego devuelve una respuesta `CreatePaymentResponse` con un ID de pago único.
-- Las clases `CreatePaymentRequest` y `CreatePaymentResponse` son registros que representan las estructuras de datos utilizadas para la solicitud y la respuesta de la actividad, respectivamente.
+- Las clases `CreatePaymentRequest` y `CreatePaymentResponse` son _records_ que representan las estructuras de datos utilizadas para la solicitud y la respuesta de la actividad, respectivamente.
 ### CreateInvoiceActivity
 
 Este Activity se encargará ahora de generar la factura:
@@ -137,6 +172,7 @@ public class CreateInvoiceActivity(ILogger<CreateInvoiceActivity> logger)
 {
     protected override Task<CreateInvoiceResponse> ExecuteAsync(TaskContext context, CreateInvoiceRequest input)
     {
+        // TODO: Create a real invoice
         if (new Random().Next(0, 10) > 5)
         {
             logger.LogError("Failed to create invoice");
@@ -155,7 +191,6 @@ public record CreateInvoiceResponse(string InvoiceId);
 ```
 
 - Al igual que la actividad anterior, se define la clase `CreateInvoiceActivity` que hereda de `AsyncTaskActivity<CreateInvoiceRequest, CreateInvoiceResponse>`.
-- En el método `ExecuteAsync`, se simula una probabilidad de error al crear una factura.
 - Si no hay errores, se registra información sobre la creación de la factura y se devuelve una respuesta `CreateInvoiceResponse` con un ID de factura único.
 ### PaymentOrchestrator
 
@@ -189,6 +224,8 @@ public record PaymentResponse(string PaymentId, string InvoiceId);
 - DTFx maneja la persistencia de estados automáticamente. En puntos críticos, como antes y después de realizar llamadas a actividades, el estado de la orquestación se guarda de forma automática.
 - Si la orquestación se detiene en algún punto, ya sea debido a un tiempo de espera o a una espera de actividad, el estado actual se guarda de manera persistente en el almacenamiento configurado (generalmente Azure Storage).
 - DTFx proporciona capacidades integradas de reintentos y manejo de errores. Por ejemplo, si una actividad falla, se pueden configurar reintentos automáticos.
+
+> Nota 💡: El framework se encargará de ejecutar el método `RunTask`, y esto sucederá varias veces, mientras el ciclo del workflow se mantenga vivo. Esto es normal, DTFx se encargará de hacer lo necesario para correr los Activities sin problema.
 
 Definición de `CreatePayment`:
 
@@ -238,7 +275,7 @@ private async Task<CreateInvoiceResponse?> CreateInvoice(OrchestrationContext
     - Si la actividad se ejecuta con éxito, la respuesta de la actividad (`invoiceResponse`) se devuelve como resultado.
 ### TaskHubWorker
 
-`WorkflowWorker` que actúa como un servicio hospedado (`IHostedService`) y representa el Task Hub Worker en el contexto del Durable Task Framework (DTFx). El Task Hub Worker es responsable de ejecutar tareas orquestadas y actividades definidas en la aplicación. Aquí está una explicación detallada del código:
+`WorkflowWorker` actúa como un servicio hospedado (`IHostedService`) y representa el Task Hub Worker en el contexto del DTFx. El Task Hub Worker es responsable de ejecutar tareas orquestadas y actividades definidas en la aplicación.
 
 ```csharp
 using DurableTask.Api.Workflows.CreatePayment;
@@ -283,10 +320,6 @@ public class WorkflowWorker(IServiceProvider serviceProvider) : IHostedServ
     - Se utiliza el método `AddTaskOrchestrations` para agregar las orquestaciones y `AddTaskActivities` para agregar las actividades.
     - En este caso, se utilizan `ServiceProviderObjectCreator` para permitir la resolución de dependencias utilizando el contenedor de servicios (`serviceProvider`).
     - Se inician las orquestaciones y actividades registradas llamando a `StartAsync()`.
-4. **Iniciar el Task Hub Worker:**
-    - El método `StartAsync()` se encarga de iniciar el Task Hub Worker, lo que permite que comience a procesar orquestaciones y actividades.
-5. **Detener el Task Hub Worker:**
-    - El método `StopAsync()` se utiliza para detener el Task Hub Worker cuando es necesario. En este caso, se utiliza con `await` para esperar hasta que el Task Hub Worker se detenga antes de completar la tarea.
 
 En resumen, el `WorkflowWorker` se encarga de iniciar y detener el Task Hub Worker, así como de configurar y registrar las orquestaciones y actividades que debe ejecutar. Este componente es fundamental para la ejecución y coordinación de flujos de trabajo duraderos en el Durable Task Framework.
 
@@ -370,7 +403,7 @@ app.Run();
 - `AddWorkflows()` se llama para configurar los workflows y servicios relacionados necesarios para DTFx.
 **Definición de un Endpoint POST:**
 - `MapPost("/api/payments", async (CreatePaymentRequest request, TaskHubClient client) => {...}` define un endpoint para manejar solicitudes HTTP POST a la ruta "/api/payments".
-- El handler de este endpoint crea una instancia de orquestación (`PaymentOrchestrator`) utilizando el cliente de Task Hub (`TaskHubClient`). La solicitud (`CreatePaymentRequest`) se pasa como entrada a la orquestación.
+- El handler de este endpoint recibe en el body los datos para iniciar la orquestación (`PaymentOrchestrator`) utilizando el cliente de Task Hub (`TaskHubClient`). La solicitud (`CreatePaymentRequest`) se pasa como entrada a la orquestación.
 - Se retorna un resultado que incluye el ID de la instancia de orquestación creada.
 ### WorkflowConfigExtensions
 
@@ -438,10 +471,9 @@ internal static class WorkflowConfigExtensions
 }
 ```
 
-
 ### Probando la Solución
 
-Antes de poner en marcha la aplicación, es crucial asegurarse de tener instalado el Emulador de Azure Storage, también conocido como Azurite, ya que el correcto funcionamiento del Worker depende por completo de este servicio.
+Antes de poner en marcha la aplicación, es crucial asegurarse de tener instalado el Emulador de Azure Storage, también conocido como [Azurite](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio%2Cblob-storage), ya que el correcto funcionamiento del Worker depende por completo de este servicio.
 
 Una vez que el emulador de almacenamiento está en marcha, podemos ejecutar la aplicación y utilizar Swagger para realizar solicitudes de prueba. A continuación, se muestra un ejemplo de los resultados que se pueden observar en la consola:
 
@@ -459,6 +491,7 @@ En conclusión, la implementación de workflows utilizando el Durable Task Frame
 - [Dependency Injection with Durable Task Framework | Andrew Stevens](https://andrewstevens.dev/posts/dependency-injection-durable-task/)
 - [Goodbye long procedural code! Fix it with workflows (youtube.com)](https://www.youtube.com/watch?v=WjzojcyNp4U&ab_channel=CodeOpinion)
 - [Durable Task Framework Internals - Part 1 (Dataflow and Reliability) | Abhik's Blog (abhikmitra.github.io)](https://abhikmitra.github.io/blog/durable-task/)
+**Alternativas**
 - [Sagas · MassTransit](https://masstransit.io/documentation/configuration/sagas/overview)
 - [Sagas • NServiceBus • Particular Docs](https://docs.particular.net/nservicebus/sagas/)
 - [Workflow overview | Dapr Docs](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
