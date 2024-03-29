@@ -127,6 +127,7 @@ Proveedores de almacenamiento admitidos por Durable Task Framework:
 6. **DurableTask.Emulator**
     - Almacén en memoria diseñado exclusivamente para fines de prueba. No se recomienda ni está diseñado para cargas de trabajo en producción.
     - Estado de desarrollo: No se mantiene activamente.
+
 ### CreatePaymentActivity
 
 Utilizando `dotnet new web`, tendremos una aplicación base para comenzar a hacer el workflow.
@@ -192,6 +193,7 @@ public record CreateInvoiceResponse(string InvoiceId);
 
 - Al igual que la actividad anterior, se define la clase `CreateInvoiceActivity` que hereda de `AsyncTaskActivity<CreateInvoiceRequest, CreateInvoiceResponse>`.
 - Si no hay errores, se registra información sobre la creación de la factura y se devuelve una respuesta `CreateInvoiceResponse` con un ID de factura único.
+
 ### PaymentOrchestrator
 
 ```csharp
@@ -491,6 +493,7 @@ En conclusión, la implementación de workflows utilizando el Durable Task Frame
 - [Dependency Injection with Durable Task Framework | Andrew Stevens](https://andrewstevens.dev/posts/dependency-injection-durable-task/)
 - [Goodbye long procedural code! Fix it with workflows (youtube.com)](https://www.youtube.com/watch?v=WjzojcyNp4U&ab_channel=CodeOpinion)
 - [Durable Task Framework Internals - Part 1 (Dataflow and Reliability) | Abhik's Blog (abhikmitra.github.io)](https://abhikmitra.github.io/blog/durable-task/)
+
 **Alternativas**
 - [Sagas · MassTransit](https://masstransit.io/documentation/configuration/sagas/overview)
 - [Sagas • NServiceBus • Particular Docs](https://docs.particular.net/nservicebus/sagas/)

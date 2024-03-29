@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "55ec7bb2b3454187",
+        "id": "d34cc0c89b370343",
         "type": "tabs",
         "children": [
           {
-            "id": "196cc94384c6bb80",
+            "id": "1e5e8ed0e34ab3ec",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -73,13 +69,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 435.5,
-    "collapsed": true
+    "width": 435.5
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -95,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/C Orquestado Workdlows con DTFx y Azure.md"
+                "file": "Excalidraw/Drawing 2024-03-28 20.42.22.excalidraw.md"
               }
             }
           },
@@ -155,7 +147,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 314.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -165,15 +157,34 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "196cc94384c6bb80",
+  "active": "0b4c63cd99a8a74c",
   "lastOpenFiles": [
-    "Posts/Minimal API.md",
+    "Excalidraw/Drawing 2024-02-06 17.37.38.excalidraw.md",
+    "Excalidraw/Drawing 2024-03-28 20.42.22.excalidraw.md",
+    "Excalidraw/Testing.excalidraw.md",
+    "Posts/Decorator Pattern.md",
+    "Posts/Auth0 y ASP.NET Cómo proteger tus aplicaciones web con autenticación avanzada.md",
+    "Posts/04042023 - ASP.NET Core MultiTenant Web API.md",
+    "Posts/10102022 - DotNet Big Data con Azure Storage Tables.md",
     "Posts/Mejorando Rendimiento y Escalabilidad Guía de Caché Distribuido en ASP.NET Core.md",
     "Posts/FluentResults Simplificando el Manejo de Resultados y Errores en Aplicaciones .NET.md",
     "Posts/C Orquestado Workdlows con DTFx y Azure.md",
+    "Posts/Minimal API.md",
+    "Posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
+    "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
+    "Posts/06042023 - Auth0, Web y APIs.md",
+    "Posts/10032023 ASPNET Core API Key Authentication.md",
+    "Posts/30122022 - Minimal API - Validación con FluentValidation y Endpoint Filters.md",
+    "Posts/27102022 - Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
+    "Untitled.md",
+    "Pasted Image 20240206173011_611.jpg",
+    "Excalidraw",
+    "Untitled.canvas",
+    "README.md",
     "Posts/Series/CQRS Series/14042022 - Serilog en ASP.NET Core Más Allá de los Logs Básicos - Parte 9.md",
     "Posts/Series/CQRS Series/13042022 - Pruebas de Integración en ASP.NET Core y CQRS Parte 8.md",
     "Posts/Series/CQRS Series/08042022 - Mejorando la Organización de Código con Vertical Slice Architecture (Parte 6).md",
@@ -181,21 +192,6 @@
     "Posts/Series/CQRS Series/07042022 - Autenticación y Autorización con JWT en ASP.NET Core (Parte 5).md",
     "Posts/Series/CQRS Series/02042022 - Hashids en ASP.NET Core - Protegiendo tus URLs (Parte 4).md",
     "Posts/Series/CQRS Series/02042022 - Simplificando el Mapeo de Entidades con AutoMapper en CQRS (Parte 3).md",
-    "Posts/Series/CQRS Series/31032022 - CQRS y Validaciones Construyendo APIs Robustas con MediatR y FluentValidation (Parte 2).md",
-    "Posts/Series/CQRS Series/31032022 - Desarrollando una API en ASP.NET con CQRS y MediatR Parte 1.md",
-    "Posts/Explorando la Autenticación Bearer en ASP.NET Core 8.md",
-    "Posts/Decorator Pattern.md",
-    "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
-    "Posts/Implementación de Health Checks en ASP.NET Core.md",
-    "Posts/Implementando el Patrón Outbox en ASP.NET Core Mejorando la Consistencia en Sistemas Distribuidos.md",
-    "Posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
-    "Pasted.md",
-    "Top 10 OWASP 2021 - Cheat Sheet.md",
-    "README.md",
-    "Desarrollo Seguro.md",
-    "20 Tips de seguridad para Aplicaciones Web.md",
-    "Posts/Series/CQRS Series/06052023 - Parte 14 - Paginación con Entity Frameework.md",
-    "Posts/Series/CQRS Series/29042023 - Parte 13 - Dynamic Sort con Entity Framework.md",
     "Pasted image 20230603092109.png",
     "Pasted image 20230603081926.png",
     "Pasted image 20230603092152.png",
