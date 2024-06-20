@@ -1,10 +1,12 @@
 {
-  "accentColor": "#622d91",
-  "cssTheme": "Flexoki",
-  "theme": "obsidian",
+  "accentColor": "",
+  "cssTheme": "Atom",
+  "theme": "moonstone",
   "baseFontSize": 17,
   "enabledCssSnippets": [
     "custom-width"
   ],
-  "translucency": false
+  "translucency": false,
+  "interfaceFontFamily": "",
+  "textFontFamily": "Segoe UI Emoji"
 }

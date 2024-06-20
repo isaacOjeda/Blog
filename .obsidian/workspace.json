@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "d34cc0c89b370343",
+        "id": "b51658bb81dcc836",
         "type": "tabs",
         "children": [
           {
-            "id": "1e5e8ed0e34ab3ec",
+            "id": "8ddb70e3f35b9b90",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,37 +159,39 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "1e5e8ed0e34ab3ec",
+  "active": "0b4c63cd99a8a74c",
   "lastOpenFiles": [
+    "Posts/Series/Domain Driven Design/00. Summary.md",
+    "Posts/Series/Domain Driven Design/02.md",
+    "Posts/Series/Domain Driven Design/01. Fundamentos del Diseño Estratégico en Domain Driven Design.md",
+    "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md",
+    "Posts/Series/CQRS Series/31032022 - Desarrollando una API en ASP.NET con CQRS y MediatR Parte 1.md",
+    "Posts/single posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
+    "Posts/single posts/04042023 - ASP.NET Core MultiTenant Web API.md",
+    "Posts/Series/Domain Driven Design",
+    "Posts/single posts",
+    "Posts/single posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
     "Excalidraw/Drawing 2024-03-28 20.42.22.excalidraw.md",
-    "Posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
     "Excalidraw/Drawing 2024-02-06 17.37.38.excalidraw.md",
     "Excalidraw/Testing.excalidraw.md",
-    "Posts/Decorator Pattern.md",
-    "Posts/Auth0 y ASP.NET Cómo proteger tus aplicaciones web con autenticación avanzada.md",
-    "Posts/04042023 - ASP.NET Core MultiTenant Web API.md",
-    "Posts/10102022 - DotNet Big Data con Azure Storage Tables.md",
-    "Posts/Mejorando Rendimiento y Escalabilidad Guía de Caché Distribuido en ASP.NET Core.md",
-    "Posts/FluentResults Simplificando el Manejo de Resultados y Errores en Aplicaciones .NET.md",
-    "Posts/C Orquestado Workdlows con DTFx y Azure.md",
-    "Posts/Minimal API.md",
-    "Posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
-    "Posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
-    "Posts/06042023 - Auth0, Web y APIs.md",
-    "Posts/10032023 ASPNET Core API Key Authentication.md",
-    "Posts/30122022 - Minimal API - Validación con FluentValidation y Endpoint Filters.md",
-    "Posts/27102022 - Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
+    "Posts/single posts/Decorator Pattern.md",
+    "Posts/single posts/Auth0 y ASP.NET Cómo proteger tus aplicaciones web con autenticación avanzada.md",
+    "Posts/single posts/10102022 - DotNet Big Data con Azure Storage Tables.md",
+    "Posts/single posts/Mejorando Rendimiento y Escalabilidad Guía de Caché Distribuido en ASP.NET Core.md",
+    "Posts/single posts/FluentResults Simplificando el Manejo de Resultados y Errores en Aplicaciones .NET.md",
+    "Posts/single posts/C Orquestado Workdlows con DTFx y Azure.md",
+    "Posts/single posts/Minimal API.md",
+    "Posts/single posts/02062023 - ASP.NET Core Monitoreo con OpenTelemetry y Grafana.md",
+    "Posts/single posts/06042023 - Auth0, Web y APIs.md",
+    "Posts/single posts/10032023 ASPNET Core API Key Authentication.md",
+    "Posts/single posts/30122022 - Minimal API - Validación con FluentValidation y Endpoint Filters.md",
+    "Posts/single posts/27102022 - Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
     "Untitled.md",
     "Pasted Image 20240206173011_611.jpg",
     "Excalidraw",
     "Untitled.canvas",
     "README.md",
     "Posts/Series/CQRS Series/14042022 - Serilog en ASP.NET Core Más Allá de los Logs Básicos - Parte 9.md",
-    "Posts/Series/CQRS Series/13042022 - Pruebas de Integración en ASP.NET Core y CQRS Parte 8.md",
-    "Posts/Series/CQRS Series/08042022 - Mejorando la Organización de Código con Vertical Slice Architecture (Parte 6).md",
-    "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md",
-    "Posts/Series/CQRS Series/07042022 - Autenticación y Autorización con JWT en ASP.NET Core (Parte 5).md",
-    "Posts/Series/CQRS Series/02042022 - Hashids en ASP.NET Core - Protegiendo tus URLs (Parte 4).md",
     "Pasted image 20230603092109.png",
     "Pasted image 20230603081926.png",
     "Pasted image 20230603092152.png",
