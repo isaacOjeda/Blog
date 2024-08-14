@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "60082815784983c3",
+        "id": "60eff0a30ebddb06",
         "type": "tabs",
         "children": [
           {
-            "id": "57a903531c0ad211",
+            "id": "adaef5a2d42bde23",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/single posts/Localización en ASP.NET Core Cómo Implementar Traducciones Dinámicas Usando una Base de Datos.md",
+                "file": "Posts/single posts/Estrategias para Encapsular Dependencias Externas Creación componentes personalizados en Angular.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byCreatedTime"
+                "sortOrder": "byModifiedTime"
               }
             }
           },
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 435.5
+    "width": 435.5,
+    "collapsed": true
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Posts/single posts/Localización en ASP.NET Core Cómo Implementar Traducciones Dinámicas Usando una Base de Datos.md",
+                "file": "Posts/single posts/Estrategias para Encapsular Dependencias Externas Creación componentes personalizados en Angular.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Posts/single posts/Localización en ASP.NET Core Cómo Implementar Traducciones Dinámicas Usando una Base de Datos.md",
+                "file": "Posts/single posts/Estrategias para Encapsular Dependencias Externas Creación componentes personalizados en Angular.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Posts/single posts/Localización en ASP.NET Core Cómo Implementar Traducciones Dinámicas Usando una Base de Datos.md"
+                "file": "Posts/single posts/Estrategias para Encapsular Dependencias Externas Creación componentes personalizados en Angular.md"
               }
             }
           },
@@ -167,9 +168,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "57a903531c0ad211",
+  "active": "adaef5a2d42bde23",
   "lastOpenFiles": [
     "Posts/single posts/Localización en ASP.NET Core Cómo Implementar Traducciones Dinámicas Usando una Base de Datos.md",
+    "Posts/single posts/Estrategias para Encapsular Dependencias Externas Creación componentes personalizados en Angular.md",
     "Posts/Series/CQRS Series/31032022 - Desarrollando una API en ASP.NET con CQRS y MediatR Parte 1.md",
     "Posts/Series/CQRS Series/Parte 8 - Integration Tests.md",
     "Posts/Series/CQRS Series/08042022 - Mejorando la Organización de Código con Vertical Slice Architecture (Parte 6).md",
@@ -196,7 +198,6 @@
     "Excalidraw/Drawing 2024-03-28 20.42.22.excalidraw.md",
     "Excalidraw/Drawing 2024-02-06 17.37.38.excalidraw.md",
     "Excalidraw/Testing.excalidraw.md",
-    "Posts/single posts/Decorator Pattern.md",
     "Pasted Image 20240206173011_611.jpg",
     "Excalidraw",
     "Untitled.canvas",
