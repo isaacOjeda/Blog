@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/single posts/Strategy Factory Pattern.md",
+                "file": "Posts/single posts/Integration Tests en .NET con TestContainers Pruebas de Base de Datos Aisladas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Strategy Factory Pattern"
+              "title": "Integration Tests en .NET con TestContainers Pruebas de Base de Datos Aisladas"
             }
           }
         ]
@@ -190,7 +190,9 @@
   },
   "active": "2936b9c9712fba9a",
   "lastOpenFiles": [
+    "Posts/single posts/Integration Tests en .NET con TestContainers Pruebas de Base de Datos Aisladas.md",
     "Posts/single posts/Strategy Factory Pattern.md",
+    "Posts/single posts/27102022 - Background Jobs Recurrentes (CRON) - ASP.NET Core.md",
     "Posts/single posts/Estrategias para Encapsular Dependencias Externas Creación componentes personalizados en Angular.md",
     "Posts/single posts/Localización en ASP.NET Core Cómo Implementar Traducciones Dinámicas Usando una Base de Datos.md",
     "Posts/Series/CQRS Series/31032022 - Desarrollando una API en ASP.NET con CQRS y MediatR Parte 1.md",
@@ -216,8 +218,6 @@
     "Posts/single posts/04042023 - ASP.NET Core MultiTenant Web API.md",
     "Posts/Series/Domain Driven Design",
     "Posts/single posts",
-    "Excalidraw/Drawing 2024-03-28 20.42.22.excalidraw.md",
-    "Excalidraw/Drawing 2024-02-06 17.37.38.excalidraw.md",
     "Pasted Image 20240206173011_611.jpg",
     "Excalidraw",
     "Untitled.canvas",
