@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9b9269ea0eb06291",
+        "id": "e9b0ff0983d9dab2",
         "type": "tabs",
         "children": [
           {
-            "id": "8bb16a1430412561",
+            "id": "c4738d2a64c97bc4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/drafts/Aspire, Ollama and Semantic Kernel.md",
+                "file": "Posts/Series/Semantic Kernel/Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Aspire, Ollama and Semantic Kernel"
+              "title": "Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama"
             }
           }
         ]
@@ -187,8 +187,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "8bb16a1430412561",
+  "active": "c4738d2a64c97bc4",
   "lastOpenFiles": [
+    "Posts/Series/Semantic Kernel/00 - Learning.md",
+    "Posts/Series/Semantic Kernel/Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama.md",
+    "Posts/Series/Domain Driven Design/00. Summary.md",
+    "Posts/Series/Semantic Kernel",
+    "Posts/Series/Domain Driven Design/01. Fundamentos del Diseño Estratégico en Domain Driven Design.md",
     "Posts/drafts/Aspire, Ollama and Semantic Kernel.md",
     "Posts/drafts",
     "Posts/single posts/Integration Tests en .NET con TestContainers Pruebas de Base de Datos Aisladas.md",
@@ -212,10 +217,6 @@
     "Posts/single posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
     "Posts/single posts/Mejorando Rendimiento y Escalabilidad Guía de Caché Distribuido en ASP.NET Core.md",
     "Posts/single posts/Minimal API.md",
-    "Posts/single posts/Simplifica el Mapeo de Endpoints en Minimal APIs de ASP.NET Core.md",
-    "Posts/Series/Domain Driven Design/00. Summary.md",
-    "Posts/Series/Domain Driven Design/02.md",
-    "Posts/Series/Domain Driven Design/01. Fundamentos del Diseño Estratégico en Domain Driven Design.md",
     "Posts/Series/Domain Driven Design",
     "Posts/single posts",
     "Pasted Image 20240206173011_611.jpg",
