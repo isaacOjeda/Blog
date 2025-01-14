@@ -1,11 +1,11 @@
 ### **1. Introducción**
 
-En este tutorial, aprenderás cómo usar **Semantic Kernel** para integrar modelos de lenguaje avanzados y construir un servicio REST que resuma texto. Utilizaremos **Ollama** como motor local de modelos de lenguaje, lo que nos permitirá evitar el uso de servicios en la nube en esta fase de desarrollo.
+En este tutorial, aprenderás cómo usar **Semantic Kernel** para integrar Large Language Models (LLM) y construir un servicio REST que resuma texto. Utilizaremos **Ollama** como motor local de modelos de lenguaje, lo que nos permitirá evitar el uso de servicios en la nube en esta fase de desarrollo.
 
 El objetivo principal es configurar un entorno de trabajo funcional en C# que permita a los desarrolladores:
 
 1. Conectar un modelo de lenguaje local (_llama3.2_).
-2. Crear un kernel para manejar habilidades personalizadas.
+2. Crear un kernel para manejar tareas personalizadas.
 3. Exponer la funcionalidad como un endpoint REST en una API ASP.NET Core.
 
 Al finalizar, tendrás un servicio de API que podrá recibir texto como entrada y devolver un resumen en una sola oración. Esto no solo te ayudará a entender cómo usar Semantic Kernel, sino que también te dará una base sólida para construir aplicaciones prácticas basadas en IA generativa.
@@ -14,21 +14,30 @@ Al finalizar, tendrás un servicio de API que podrá recibir texto como entrada 
 
 #### **2.1. ¿Qué es Semantic Kernel?**
 
-**Semantic Kernel** es un framework desarrollado por Microsoft para integrar modelos de lenguaje avanzados en aplicaciones. Permite a los desarrolladores conectar diferentes motores de IA generativa, definir habilidades personalizadas mediante prompts y construir flujos complejos de manera programática.
+Semantic Kernel es un SDK de código abierto que permite a los desarrolladores crear sus propios agentes personalizados de inteligencia artificial (IA). Al combinar modelos de lenguaje de gran escala (LLMs) con código nativo, los desarrolladores pueden crear agentes de IA que entiendan y respondan a solicitudes en lenguaje natural para realizar una variedad de tareas.
 
-En este tutorial, usaremos Semantic Kernel junto con **Ollama**, un motor local de modelos de lenguaje, para crear y gestionar una habilidad de generación de texto que resuma contenido.
+#### **2.2 ¿Qué es un agente de IA?**
 
-#### **2.2. Componentes Claves**
+Un agente de IA es un programa diseñado para alcanzar objetivos predeterminados. Los agentes de IA están impulsados por modelos de lenguaje de gran escala (LLMs) entrenados con cantidades masivas de datos. Estos agentes pueden completar una amplia variedad de tareas con mínima o ninguna intervención humana. Algunos ejemplos de lo que pueden hacer los agentes de IA incluyen:
 
-1. **Kernel**:  
-    El núcleo del framework que conecta el modelo de IA con la lógica de la aplicación. En este caso, lo configuramos para usar Ollama como motor de generación de texto.
-2. **Skills** (_Habilidades_):  
-    Son capacidades específicas que se pueden programar en el kernel. Aquí definimos una habilidad básica para resumir texto, utilizando prompts personalizados.
-3. **Text Generation Service**:  
-    Una abstracción que maneja las interacciones con el modelo de lenguaje. Se utiliza para enviar el texto de entrada y obtener la respuesta generada por el modelo.
-4. **Ollama**:  
-    Una solución local para ejecutar modelos de lenguaje, que elimina la necesidad de servicios en la nube y facilita el desarrollo en entornos locales. En el código, configuramos **Ollama** para usar el modelo `llama3.2`.
+- Escribir código.
+- Redactar correos electrónicos.
+- Resumir reuniones.
+- Proporcionar recomendaciones.
+- ¡Y mucho más!
 
+Semantic Kernel integra modelos de lenguaje como OpenAI, Azure OpenAI y Hugging Face con lenguajes de programación convencionales como C#, Python y Java. Los desarrolladores pueden crear "plugins" para interactuar con los LLMs y realizar diversas tareas. Además, el SDK de Semantic Kernel incluye plugins predefinidos que pueden mejorar rápidamente una aplicación. Esto permite que los desarrolladores utilicen LLMs en sus propias aplicaciones sin necesidad de aprender los detalles específicos de la API del modelo.
+
+#### **2.3 Componentes clave del SDK de Semantic Kernel**
+
+**Capa de orquestación de IA**  
+El núcleo del stack de Semantic Kernel es una capa de orquestación de IA que permite la integración fluida de modelos de IA y plugins. Esta capa combina estos componentes para crear interacciones innovadoras con los usuarios.
+
+**Conectores**  
+El SDK ofrece un conjunto de conectores que permiten a los desarrolladores integrar LLMs en sus aplicaciones existentes. Estos conectores actúan como un puente entre el código de la aplicación y los modelos de IA.
+
+**Plugins**  
+El SDK opera con plugins, que funcionan como el "cuerpo" de la aplicación de IA. Los plugins incluyen solicitudes (prompts) que el modelo de IA debe responder y funciones para realizar tareas especializadas. Los desarrolladores pueden usar plugins predefinidos o crear los suyos propios.
 ### **3. Desarrollo del Ejemplo**
 
 En esta sección, construiremos un API REST que utiliza **Semantic Kernel** y el modelo de lenguaje **llama3.2** de **Ollama** para resumir texto en una sola oración. El objetivo es entender cómo configurar el entorno y crear una habilidad básica que pueda ser utilizada desde cualquier aplicación a través de un endpoint.
