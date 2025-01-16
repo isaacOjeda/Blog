@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Series/Semantic Kernel/Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama.md",
+                "file": "Posts/Series/Semantic Kernel/02 Extendiendo Semantic Kernel Creando Plugins para Consultas Dinámicas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama"
+              "title": "02 Extendiendo Semantic Kernel Creando Plugins para Consultas Dinámicas"
             }
           }
         ]
@@ -189,8 +189,9 @@
   },
   "active": "c4738d2a64c97bc4",
   "lastOpenFiles": [
+    "Posts/Series/Semantic Kernel/01 Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama.md",
+    "Posts/Series/Semantic Kernel/02 Extendiendo Semantic Kernel Creando Plugins para Consultas Dinámicas.md",
     "Posts/Series/Semantic Kernel/00 - Learning.md",
-    "Posts/Series/Semantic Kernel/Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama.md",
     "Posts/Series/Domain Driven Design/00. Summary.md",
     "Posts/Series/Semantic Kernel",
     "Posts/Series/Domain Driven Design/01. Fundamentos del Diseño Estratégico en Domain Driven Design.md",
@@ -216,7 +217,6 @@
     "Posts/single posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
     "Posts/single posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
     "Posts/single posts/Mejorando Rendimiento y Escalabilidad Guía de Caché Distribuido en ASP.NET Core.md",
-    "Posts/single posts/Minimal API.md",
     "Posts/Series/Domain Driven Design",
     "Posts/single posts",
     "Pasted Image 20240206173011_611.jpg",
