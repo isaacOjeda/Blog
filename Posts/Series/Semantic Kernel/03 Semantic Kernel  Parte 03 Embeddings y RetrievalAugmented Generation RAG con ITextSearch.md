@@ -1,5 +1,3 @@
-# Semantic Kernel – Parte 03: Embeddings y Retrieval-Augmented Generation (RAG)
-
 ## **Introducción**
 
 En esta tercera parte de nuestra serie sobre **Semantic Kernel**, nos adentramos en la integración de **Embeddings** y **Retrieval-Augmented Generation (RAG)** para mejorar la generación de contenido y la recuperación de información. Utilizando herramientas como **Ollama** para la creación de embeddings y **Qdrant** como vector store, podemos construir sistemas más inteligentes capaces de generar respuestas más precisas basadas en datos externos y actualizados, en lugar de depender únicamente de los datos con los que fue entrenado el modelo. A través de esta configuración, aprovechamos la sinergia entre el poder de los modelos de lenguaje y la capacidad de búsqueda semántica para proporcionar soluciones más efectivas a las consultas de los usuarios. En este artículo, exploraremos cómo implementar estas tecnologías en **Semantic Kernel**, con ejemplos prácticos para configurar los servicios y gestionar los embeddings de manera eficiente.
@@ -157,6 +155,10 @@ public static class DependencyConfig
 Para almacenar datos en Qdrant, primero debemos definir nuestro modelo de datos que será indexado en la base de datos vectorial.  
 En este ejemplo, queremos guardar una serie de posts y realizar búsquedas semánticas sobre su contenido.
 
+
+> Advertencia ⚠️: Las búsquedas vectoriales que estamos viendo aquí están en **Preview (Alpha)**, por lo que podrían cambiar en el futuro. Actualmente, **no se recomienda su uso en producción**, a menos que estés dispuesto a evolucionar junto con el framework.
+> Anteriormente, se utilizaban los **Memory de Semantic Kernel** para búsquedas similares, pero estos están en proceso de ser considerados **"Legacy"**, por lo que su uso a largo plazo podría no ser viable.
+
 ### **Definición del modelo `BlogPost`**
 
 El modelo `BlogPost` representará las entradas del blog en nuestra base de datos vectorial.
@@ -285,6 +287,7 @@ Si ejecutamos nuestra solución con Aspire y realizamos la solicitud anterior, p
 - Este ejemplo usa **nomic-embed-text**, que genera vectores de **768 dimensiones**.
 - Qdrant debe estar configurado para aceptar este tamaño de vector.
 - Si usas modelos de OpenAI u otros proveedores, verifica el tamaño del vector antes de insertarlo en Qdrant.
+
 ## **Recuperando Información desde Qdrant**
 
 Para demostrar cómo realizar búsquedas semánticas en los vectores almacenados en Qdrant, podemos hacerlo de distintas maneras: usando el vector directamente o utilizando una abstracción que **Semantic Kernel** nos proporciona, llamada `ITextSearch`.

@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Posts/Series/Semantic Kernel/03 Semantic Kernel  Parte 03 Embeddings y RetrievalAugmented Generation RAG con ITextSearch.md",
+                "file": "Posts/Series/Semantic Kernel/04 Agents.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03 Semantic Kernel  Parte 03 Embeddings y RetrievalAugmented Generation RAG con ITextSearch"
+              "title": "04 Agents"
+            }
+          },
+          {
+            "id": "df52795a8e188763",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Posts/Series/Semantic Kernel/Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
             }
           }
         ]
@@ -40,7 +54,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -88,7 +102,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 435.5
+    "width": 435.5,
+    "collapsed": true
   },
   "right": {
     "id": "520fa23befeb8e1b",
@@ -190,8 +205,10 @@
   },
   "active": "c4738d2a64c97bc4",
   "lastOpenFiles": [
-    "Posts/Series/Semantic Kernel/02 Extendiendo Semantic Kernel Creando Plugins para Consultas Dinámicas.md",
+    "Posts/Series/Semantic Kernel/Untitled.md",
+    "Posts/Series/Semantic Kernel/04 Agents.md",
     "Posts/Series/Semantic Kernel/03 Semantic Kernel  Parte 03 Embeddings y RetrievalAugmented Generation RAG con ITextSearch.md",
+    "Posts/Series/Semantic Kernel/02 Extendiendo Semantic Kernel Creando Plugins para Consultas Dinámicas.md",
     "Posts/Series/Semantic Kernel/01 Explorando Semantic Kernel Crea un API para Generación de Texto con Ollama.md",
     "Posts/Series/Semantic Kernel/00 - Learning.md",
     "Posts/Series/Domain Driven Design/00. Summary.md",
@@ -216,8 +233,6 @@
     "Posts/Series/CQRS Series/13042022 - Pruebas de Integración en ASP.NET Core y CQRS Parte 8.md",
     "Posts/Series/CQRS Series/14042022 - Serilog en ASP.NET Core Más Allá de los Logs Básicos - Parte 9.md",
     "Posts/Series/CQRS Series/10042022 - Creando Sistemas Auditables con ASP.NET Core - Parte 7 Auditoría con Audit.NET.md",
-    "Posts/single posts/Mejorando la Observabilidad en ASP.NET Core con OpenTelemetry y Aspire.md",
-    "Posts/single posts/Mejorando la seguridad en aplicaciones SPA Implementación del patrón BFF con Angular y ASP.NET Core.md",
     "Posts/Series/Domain Driven Design",
     "Posts/single posts",
     "Pasted Image 20240206173011_611.jpg",
